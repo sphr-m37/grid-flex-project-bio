@@ -1,0 +1,574 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: dark-color;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5rem;
+  text-transform: capitalize;
+}
+
+.contact-me h2, .people-comments > h2, .about-my-skills > h2, .about-me > h2, .my-jobs-inner .jobs-description h2, .main .skills .skill-descrition h2, .main .skills h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+  position: relative;
+}
+
+.contact-me h2::after, .people-comments > h2::after, .about-my-skills > h2::after, .about-me > h2::after, .my-jobs-inner .jobs-description h2::after, .main .skills h2::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: crimson;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+/*header*/
+.header {
+  position: relative;
+  height: 100vh;
+  background: url(../images/hero.jpg) no-repeat top center;
+  background-size: cover;
+}
+.header .nav {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+.header .nav > a {
+  color: white;
+  font-size: 25px;
+}
+.header .nav ul {
+  display: flex;
+}
+.header .nav ul li {
+  padding: 10px 5px;
+  margin: 0 10px;
+  display: flex;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+  transition: 0.5s;
+}
+.header .nav ul li:last-child {
+  padding-right: 0;
+  margin-right: 0;
+}
+.header .nav ul li:hover {
+  border-bottom: 3px solid white;
+}
+.header .nav ul li.current-page {
+  border-bottom: 3px solid crimson;
+}
+.header .nav ul li a {
+  color: white;
+}
+.header .nav .tuggle {
+  display: none;
+}
+.header .header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 100%;
+  text-transform: uppercase;
+}
+.header .header-content h1 {
+  font-size: 40px;
+}
+.header .header-content p {
+  font-size: 25px;
+  margin: 20px 0;
+}
+.header .header-content a {
+  background-color: white;
+  color: dark-color;
+  display: inline-flex;
+  padding: 20px;
+  border-radius: 5px;
+  transition: def-transition;
+}
+.header .header-content a:hover {
+  background-color: crimson;
+  color: white;
+}
+
+/*main*/
+.main .skills {
+  text-align: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.main .skills .skill-descrition {
+  grid-column: 1/-1;
+  text-align: center;
+  width: 100%;
+}
+.main .skills p {
+  font-weight: 300;
+}
+.main .skill {
+  display: flex;
+  flex-direction: column;
+}
+.main .skill i {
+  font-size: 50px;
+}
+.main .skill i.fa-js {
+  color: orange;
+}
+.main .skill i.fa-react {
+  color: lawngreen;
+}
+.main .skill i.fa-python {
+  color: blue;
+}
+.main .skill i.fa-bootstrap {
+  color: purple;
+}
+.main .skill span {
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+/* my awards*/
+.my-awards {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.my-awards .award {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  background-color: #999;
+}
+.my-awards .award:nth-child(odd) {
+  background-color: rgba(68, 68, 68, 0.2666666667);
+}
+.my-awards .award i {
+  font-size: 60px;
+  color: crimson;
+}
+.my-awards .award p,
+.my-awards .award span {
+  font-size: 25px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/*jobs*/
+.my-jobs-inner {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.my-jobs-inner .jobs-description {
+  grid-column: 1/-1;
+}
+.my-jobs-inner .job {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.my-jobs-inner .job i {
+  width: 120px;
+  height: 120px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  position: relative;
+}
+.my-jobs-inner .job i::after {
+  content: attr(data-shadow);
+  width: 40%;
+  height: 40%;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: crimson;
+  position: absolute;
+  top: -10%;
+  left: 70%;
+}
+.my-jobs-inner .job span {
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/*footer*/
+.footer {
+  width: 100%;
+  margin-top: 30px;
+  background-color: #333;
+  color: white;
+  padding: 30px 0;
+}
+
+/* about-page*/
+.about-header {
+  height: auto;
+  border-bottom: 3px solid crimson;
+}
+
+.about-me {
+  text-align: center;
+}
+.about-me .about-me-description {
+  margin-top: 20px;
+  display: flex;
+}
+.about-me .about-me-description img {
+  width: 40%;
+  max-width: 300px;
+  margin-right: 10px;
+}
+.about-me .about-me-description .about-content {
+  border-left: 3px solid crimson;
+  background-color: rgb(228, 228, 228);
+  padding: 10px;
+  text-align: left;
+}
+
+.about-my-awards {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.about-my-awards .my-award {
+  width: 33.333%;
+  text-align: center;
+}
+.about-my-awards .my-award i {
+  font-size: 40px;
+  color: crimson;
+}
+.about-my-awards .my-award h3 {
+  margin: 15px 0;
+}
+
+/*about-my-skills*/
+.about-my-skills {
+  padding: 30px 0;
+  background-color: #333;
+}
+.about-my-skills > h2 {
+  text-align: center;
+  color: white;
+}
+.about-my-skills .skill p {
+  text-transform: lowercase;
+  color: white;
+}
+.about-my-skills .skill .box {
+  width: 100%;
+  height: 20px;
+  background-color: #999;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.about-my-skills .skill .box .chart {
+  height: inherit;
+  background-color: crimson;
+  position: absolute;
+}
+
+/*people says*/
+.people-comments {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.people-comments > h2 {
+  grid-column: 1/-1;
+}
+.people-comments > P {
+  grid-column: 1/-1;
+  text-align: center;
+}
+.people-comments .comment p {
+  border: 2px solid gray;
+  padding: 15px;
+  border-radius: 10px;
+}
+.people-comments .comment .user-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.people-comments .comment .user-info img {
+  width: 20%;
+  height: 20%;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+/*works page*/
+.works {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+.works .work {
+  overflow: hidden;
+}
+.works .work:hover img {
+  transform: scale(1.2);
+}
+.works .work img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+/*contact page*/
+.contact-me {
+  text-align: center;
+}
+.contact-me form .inputs {
+  outline: crimson;
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: " name    email " " subject phone " " text    text ";
+}
+.contact-me form .inputs .name {
+  grid-area: name;
+  padding: 10px;
+}
+.contact-me form .inputs .email {
+  grid-area: email;
+  padding: 10px;
+}
+.contact-me form .inputs .subject {
+  grid-area: subject;
+  padding: 10px;
+}
+.contact-me form .inputs .phone {
+  grid-area: phone;
+  padding: 10px;
+}
+.contact-me form .inputs .text {
+  grid-area: text;
+  padding: 10px;
+}
+.contact-me form .send-info {
+  width: 50%;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.contact-me form .send-info:hover {
+  background-color: crimson;
+}
+
+.contact-info {
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+  padding: 30px 0;
+}
+.contact-info .info-innr {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.contact-info .info-innr .info i {
+  font-size: 35px;
+}
+.contact-info .info-innr .info h3 {
+  margin: 15px 0;
+}
+
+.footer-contact-page {
+  margin-top: 5px;
+}
+
+/*responsive*/
+@media (max-width: 800px) {
+  /*works page*/
+  .works {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .people-comments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .people-comments .comment {
+    width: 100%;
+  }
+  .about-my-awards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-my-awards .my-award {
+    border-bottom: 1px solid gray;
+    padding: 20px 0;
+  }
+  .my-jobs-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .header .header-content h1 {
+    font-size: 30px;
+  }
+  .header .header-content p {
+    font-size: 22px;
+  }
+  .nav ul li {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+@media (max-width: 600px) {
+  /*contact*/
+  /*infos*/
+  .contact-info .info-innr {
+    flex-wrap: wrap;
+  }
+  .contact-info .info-innr .info {
+    width: 100%;
+    margin: 15px 0;
+  }
+  .contact-me form .inputs {
+    grid-gap: 20px;
+    grid-template-areas: "name" "email" "subject" "phone" "text";
+  }
+  .contact-me form .send-info {
+    width: 100%;
+  }
+  /*works page*/
+  .works {
+    grid-template-columns: 1fr;
+  }
+  /*about page*/
+  .people-comments {
+    grid-template-columns: 1fr;
+  }
+  .people-comments .comment .user-info {
+    justify-content: start;
+  }
+  .people-comments .comment .user-info img {
+    margin-right: 20px;
+  }
+  .about-my-awards {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-my-awards .my-award {
+    width: 100%;
+    border-bottom: 1px slid gray;
+  }
+  .about-me .about-me-description {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me .about-me-description img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .about-me .about-me-description .about-content {
+    width: 100%;
+  }
+  .header .header-content h1 {
+    font-size: 25px;
+  }
+  .header .header-content p {
+    font-size: 18px;
+  }
+  .nav ul li {
+    font-size: 12px;
+    padding: 0 2px;
+    margin: 0 2px;
+  }
+  .main .skills {
+    grid-template-columns: 1fr;
+  }
+  .my-awards {
+    grid-template-columns: 1fr;
+  }
+  .my-awards .award {
+    border-bottom: 1px solid black;
+  }
+  .my-jobs-inner {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  .header .nav .tuggle {
+    display: block;
+    color: white;
+    font-size: 30px;
+  }
+  .header .nav ul {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
